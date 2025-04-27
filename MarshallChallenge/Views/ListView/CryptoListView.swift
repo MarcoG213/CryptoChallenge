@@ -7,17 +7,18 @@
 
 import SwiftUI
 import API
+import DesignSystem
+import Core
 
 struct CryptoListView: View {
     @State private var model = CryptoListViewModel(strategy: WazirXCryptoPriceStrategy())
     
     var body: some View {
         List(model.currencies, id: \.symbol) { currency in
-            HStack {
-                Text(currency.symbol.uppercased())
-                Spacer()
-                Text(String(format: "%.2f", currency.change24h ?? 0.0))
-            }
+            CryptoListElement(assetName: currency.baseAsset,
+                              currentValue: currency.currentPrice,
+                              change24h: currency.change24h ?? 0,
+                              marketCap: (currency.marketCap ?? 0).formattedMarketCap())
         }
         .task {
             await model.fetch()
