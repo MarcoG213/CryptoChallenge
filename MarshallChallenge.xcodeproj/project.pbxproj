@@ -11,6 +11,7 @@
 		EA3D69EE2DBBA19300C6494B /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = EA3D69ED2DBBA19300C6494B /* Core */; };
 		EA3D69F02DBBA19300C6494B /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = EA3D69EF2DBBA19300C6494B /* Domain */; };
 		EA3D69F22DBBA19300C6494B /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = EA3D69F12DBBA19300C6494B /* NetworkLayer */; };
+		EA54D8F72DBE5F5000F623AE /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = EA54D8F62DBE5F5000F623AE /* DesignSystem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,7 @@
 		EA54D8A72DBE152800F623AE /* API */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = API; sourceTree = "<group>"; };
 		EA54D8C62DBE172D00F623AE /* NetworkLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkLayer; sourceTree = "<group>"; };
 		EA54D8E52DBE188D00F623AE /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
+		EA54D8F52DBE57E700F623AE /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DesignSystem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA54D8F72DBE5F5000F623AE /* DesignSystem in Frameworks */,
 				EA3D69F02DBBA19300C6494B /* Domain in Frameworks */,
 				EA3D69EC2DBBA19300C6494B /* API in Frameworks */,
 				EA3D69EE2DBBA19300C6494B /* Core in Frameworks */,
@@ -70,6 +73,7 @@
 		EA3D698F2DBB97CE00C6494B = {
 			isa = PBXGroup;
 			children = (
+				EA54D8F52DBE57E700F623AE /* DesignSystem */,
 				EA54D8E52DBE188D00F623AE /* Domain */,
 				EA54D8C62DBE172D00F623AE /* NetworkLayer */,
 				EA54D8A72DBE152800F623AE /* API */,
@@ -121,6 +125,7 @@
 				EA3D69ED2DBBA19300C6494B /* Core */,
 				EA3D69EF2DBBA19300C6494B /* Domain */,
 				EA3D69F12DBBA19300C6494B /* NetworkLayer */,
+				EA54D8F62DBE5F5000F623AE /* DesignSystem */,
 			);
 			productName = MarshallChallenge;
 			productReference = EA3D69982DBB97CE00C6494B /* MarshallChallenge.app */;
@@ -502,6 +507,10 @@
 		EA3D69F12DBBA19300C6494B /* NetworkLayer */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NetworkLayer;
+		};
+		EA54D8F62DBE5F5000F623AE /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
