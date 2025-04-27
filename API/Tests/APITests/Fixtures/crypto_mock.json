@@ -1,0 +1,15 @@
+[
+    {
+        "symbol": "btcusdt",
+        "baseAsset": "btc",
+        "quoteAsset": "usdt",
+        "openPrice": "100.0",
+        "lowPrice": "95.0",
+        "highPrice": "105.0",
+        "lastPrice": "100.0",
+        "volume": "10",
+        "bidPrice": "99.0",
+        "askPrice": "101.0",
+        "at": 1678888888000
+    }
+]
