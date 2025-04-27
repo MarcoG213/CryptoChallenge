@@ -6,15 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EA3D69EC2DBBA19300C6494B /* API in Frameworks */ = {isa = PBXBuildFile; productRef = EA3D69EB2DBBA19300C6494B /* API */; };
+		EA3D69EE2DBBA19300C6494B /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = EA3D69ED2DBBA19300C6494B /* Core */; };
+		EA3D69F02DBBA19300C6494B /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = EA3D69EF2DBBA19300C6494B /* Domain */; };
+		EA3D69F22DBBA19300C6494B /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = EA3D69F12DBBA19300C6494B /* NetworkLayer */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		EA3D69A92DBB97D000C6494B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EA3D69902DBB97CE00C6494B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EA3D69972DBB97CE00C6494B;
-			remoteInfo = MarshallChallenge;
-		};
-		EA3D69B32DBB97D000C6494B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EA3D69902DBB97CE00C6494B /* Project object */;
 			proxyType = 1;
@@ -26,7 +26,10 @@
 /* Begin PBXFileReference section */
 		EA3D69982DBB97CE00C6494B /* MarshallChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarshallChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA3D69A82DBB97D000C6494B /* MarshallChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarshallChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA3D69B22DBB97D000C6494B /* MarshallChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarshallChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA54D8882DBE12F700F623AE /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
+		EA54D8A72DBE152800F623AE /* API */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = API; sourceTree = "<group>"; };
+		EA54D8C62DBE172D00F623AE /* NetworkLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkLayer; sourceTree = "<group>"; };
+		EA54D8E52DBE188D00F623AE /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,11 +43,6 @@
 			path = MarshallChallengeTests;
 			sourceTree = "<group>";
 		};
-		EA3D69B52DBB97D000C6494B /* MarshallChallengeUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MarshallChallengeUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,17 +50,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA3D69F02DBBA19300C6494B /* Domain in Frameworks */,
+				EA3D69EC2DBBA19300C6494B /* API in Frameworks */,
+				EA3D69EE2DBBA19300C6494B /* Core in Frameworks */,
+				EA3D69F22DBBA19300C6494B /* NetworkLayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EA3D69A52DBB97D000C6494B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EA3D69AF2DBB97D000C6494B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -75,9 +70,13 @@
 		EA3D698F2DBB97CE00C6494B = {
 			isa = PBXGroup;
 			children = (
+				EA54D8E52DBE188D00F623AE /* Domain */,
+				EA54D8C62DBE172D00F623AE /* NetworkLayer */,
+				EA54D8A72DBE152800F623AE /* API */,
+				EA54D8882DBE12F700F623AE /* Core */,
 				EA3D699A2DBB97CE00C6494B /* MarshallChallenge */,
 				EA3D69AB2DBB97D000C6494B /* MarshallChallengeTests */,
-				EA3D69B52DBB97D000C6494B /* MarshallChallengeUITests */,
+				EA3D69EA2DBBA19300C6494B /* Frameworks */,
 				EA3D69992DBB97CE00C6494B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,9 +86,15 @@
 			children = (
 				EA3D69982DBB97CE00C6494B /* MarshallChallenge.app */,
 				EA3D69A82DBB97D000C6494B /* MarshallChallengeTests.xctest */,
-				EA3D69B22DBB97D000C6494B /* MarshallChallengeUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EA3D69EA2DBBA19300C6494B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +117,10 @@
 			);
 			name = MarshallChallenge;
 			packageProductDependencies = (
+				EA3D69EB2DBBA19300C6494B /* API */,
+				EA3D69ED2DBBA19300C6494B /* Core */,
+				EA3D69EF2DBBA19300C6494B /* Domain */,
+				EA3D69F12DBBA19300C6494B /* NetworkLayer */,
 			);
 			productName = MarshallChallenge;
 			productReference = EA3D69982DBB97CE00C6494B /* MarshallChallenge.app */;
@@ -140,29 +149,6 @@
 			productReference = EA3D69A82DBB97D000C6494B /* MarshallChallengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EA3D69B12DBB97D000C6494B /* MarshallChallengeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EA3D69C22DBB97D000C6494B /* Build configuration list for PBXNativeTarget "MarshallChallengeUITests" */;
-			buildPhases = (
-				EA3D69AE2DBB97D000C6494B /* Sources */,
-				EA3D69AF2DBB97D000C6494B /* Frameworks */,
-				EA3D69B02DBB97D000C6494B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EA3D69B42DBB97D000C6494B /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				EA3D69B52DBB97D000C6494B /* MarshallChallengeUITests */,
-			);
-			name = MarshallChallengeUITests;
-			packageProductDependencies = (
-			);
-			productName = MarshallChallengeUITests;
-			productReference = EA3D69B22DBB97D000C6494B /* MarshallChallengeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,10 +163,6 @@
 						CreatedOnToolsVersion = 16.2;
 					};
 					EA3D69A72DBB97D000C6494B = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = EA3D69972DBB97CE00C6494B;
-					};
-					EA3D69B12DBB97D000C6494B = {
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = EA3D69972DBB97CE00C6494B;
 					};
@@ -202,7 +184,6 @@
 			targets = (
 				EA3D69972DBB97CE00C6494B /* MarshallChallenge */,
 				EA3D69A72DBB97D000C6494B /* MarshallChallengeTests */,
-				EA3D69B12DBB97D000C6494B /* MarshallChallengeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,13 +197,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EA3D69A62DBB97D000C6494B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EA3D69B02DBB97D000C6494B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,13 +220,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EA3D69AE2DBB97D000C6494B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -260,11 +227,6 @@
 			isa = PBXTargetDependency;
 			target = EA3D69972DBB97CE00C6494B /* MarshallChallenge */;
 			targetProxy = EA3D69A92DBB97D000C6494B /* PBXContainerItemProxy */;
-		};
-		EA3D69B42DBB97D000C6494B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EA3D69972DBB97CE00C6494B /* MarshallChallenge */;
-			targetProxy = EA3D69B32DBB97D000C6494B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -411,9 +373,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcog.MarshallChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -440,9 +406,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcog.MarshallChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -484,40 +454,6 @@
 			};
 			name = Release;
 		};
-		EA3D69C32DBB97D000C6494B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TN4YD2CTJH;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.marcog.MarshallChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MarshallChallenge;
-			};
-			name = Debug;
-		};
-		EA3D69C42DBB97D000C6494B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TN4YD2CTJH;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.marcog.MarshallChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MarshallChallenge;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -548,16 +484,26 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EA3D69C22DBB97D000C6494B /* Build configuration list for PBXNativeTarget "MarshallChallengeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EA3D69C32DBB97D000C6494B /* Debug */,
-				EA3D69C42DBB97D000C6494B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EA3D69EB2DBBA19300C6494B /* API */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = API;
+		};
+		EA3D69ED2DBBA19300C6494B /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+		EA3D69EF2DBBA19300C6494B /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		EA3D69F12DBBA19300C6494B /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkLayer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EA3D69902DBB97CE00C6494B /* Project object */;
 }
