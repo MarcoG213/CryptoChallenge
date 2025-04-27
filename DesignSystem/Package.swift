@@ -23,7 +23,8 @@ let package = Package(
             dependencies: ["Core"],
             resources: [
                 .process("Resources/Icons"),
-                .process("Resources/Colors")
+                .process("Resources/Colors"),
+                .process("Resources/Images")
             ]
         ),
     ]

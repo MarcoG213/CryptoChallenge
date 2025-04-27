@@ -39,7 +39,9 @@ public struct CryptoListElement: View {
                         Text(String(format: "%.2f", currentValue))
                             .font(.caption)
                             .fontWeight(.semibold)
-                            .foregroundStyle(change24h >= 0 ? Color(CryptoColor.positive.name, bundle: .module) : Color(CryptoColor.negative.name, bundle: .module)
+                            .foregroundStyle(change24h >= 0
+                                             ? Color.positive
+                                             : Color.negative
                             )
                         Spacer()
                     }
@@ -49,7 +51,9 @@ public struct CryptoListElement: View {
                     Text(change24h.plusMinusFormatted)
                         .font(.caption)
                         .fontWeight(.semibold)
-                        .foregroundStyle(change24h >= 0 ? Color(CryptoColor.positive.name, bundle: .designSystem) : Color(CryptoColor.negative.name, bundle: .designSystem)
+                        .foregroundStyle(change24h >= 0
+                                         ? Color.positive
+                                         : Color.negative
                         )
                         .frame(width: 100)
                     
