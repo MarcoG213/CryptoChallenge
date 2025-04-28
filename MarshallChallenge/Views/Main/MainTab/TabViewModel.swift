@@ -12,12 +12,11 @@ import Foundation
 class TabViewModel {
     enum Tab: Int {
         case list = 0
-        case comparison
         case liveRate
     }
     
     var selectedTab = 0
-    var tabs: [Tab] = [.list, .comparison, .liveRate]
+    var tabs: [Tab] = [.list, .liveRate]
     
     init() {}
     
@@ -30,8 +29,6 @@ extension TabViewModel.Tab: Identifiable {
         switch self {
         case .list:
             "Currencies"
-        case .comparison:
-            "Compare"
         case .liveRate:
             "Live Rate"
         }
@@ -41,8 +38,6 @@ extension TabViewModel.Tab: Identifiable {
         switch self {
         case .list:
             "bitcoinsign.circle.fill"
-        case .comparison:
-            "arrow.left.arrow.right.circle"
         case .liveRate:
             "dot.radiowaves.left.and.right"
         }

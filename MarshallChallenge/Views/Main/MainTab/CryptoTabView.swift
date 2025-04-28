@@ -33,8 +33,9 @@ struct CryptoTabView: View {
         switch tab {
         case .list:
             CryptoListView(vm: CryptoListViewModel(service: service))
-        case .comparison: ComparisonView()
-        case .liveRate: LiveRateView()
+        case .liveRate:
+            LiveRateView()
+                .environment(service)
         }
     }
     

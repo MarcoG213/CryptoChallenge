@@ -45,31 +45,15 @@ struct CryptoListView: View {
             .navigationTitle(Text("Currencies"))
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    currencyToggle
+                    ValutaToggle(currentValuta: vm.service.selectedValuta,
+                                 toggleAction: {
+                        Task { await vm.service.toggleCurrency() }
+                    })
                 }
             }
             .navigationDestination(item: $vm.selectedCurrency) { currency in
                 CoinDetail(currency: currency, valuta: vm.service.selectedValuta)
             }
-        }
-    }
-    
-    @ViewBuilder
-    private var currencyToggle: some View {
-        Menu {
-            Button {
-                Task { await vm.service.toggleCurrency() }
-            } label: {
-                Label("Switch to \(vm.service.selectedValuta == .usd ? "SEK" : "USD")", systemImage: "arrow.left.arrow.right")
-            }
-        } label: {
-            Text(vm.service.selectedValuta.rawValue)
-                .font(.subheadline)
-                .fontWeight(.semibold)
-            +
-            Text(" \(Image(systemName: "arrow.clockwise"))")
-                .font(.footnote)
-                .fontWeight(.semibold)
         }
     }
 }
