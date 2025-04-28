@@ -13,15 +13,18 @@ public struct CryptoListElement: View {
     private let currentValue: Double
     private let change24h: Double
     private let marketCap: String
+    private let valuta: AppValuta
     
     public init(assetName: String,
                 currentValue: Double,
                 change24h: Double,
-                marketCap: String) {
+                marketCap: String,
+                valuta: AppValuta) {
         self.assetName = assetName
         self.currentValue = currentValue
         self.change24h = change24h
         self.marketCap = marketCap
+        self.valuta = valuta
     }
     
     public var body: some View {
@@ -36,7 +39,7 @@ public struct CryptoListElement: View {
                     .padding(.leading, 8)
                 HStack {
                     HStack {
-                        Text(String(format: "%.2f", currentValue))
+                        Text("\(valutaSymbol()) " + String(format: "%.2f", currentValue))
                             .font(.caption)
                             .fontWeight(.semibold)
                             .foregroundStyle(change24h >= 0
@@ -45,7 +48,7 @@ public struct CryptoListElement: View {
                             )
                         Spacer()
                     }
-                    .frame(width: 100)
+                    .frame(width: 110)
                     .padding(.leading, 8)
                     
                     Text(change24h.plusMinusFormatted)
@@ -55,22 +58,30 @@ public struct CryptoListElement: View {
                                          ? Color.positive
                                          : Color.negative
                         )
-                        .frame(width: 100)
+                        .frame(width: 60)
                     
-                    Text(marketCap)
+                    Text("\(valutaSymbol()) " + marketCap)
                         .font(.caption)
                         .fontWeight(.semibold)
-                        .frame(width: 100)
+                        .frame(width: 120)
                     
                 }
             }
+        }
+    }
+    
+    private func valutaSymbol() -> String {
+        switch valuta {
+        case .usd: "$"
+        case .sek: "SEK"
         }
     }
 }
 
 #Preview {
     CryptoListElement(assetName: "btc",
-                   currentValue: 6308934.4765,
-                   change24h: 2.4,
-                   marketCap: "$76.3456B")
+                      currentValue: 6308934.4765,
+                      change24h: 2.4,
+                      marketCap: "$76.3456B",
+                      valuta: .usd)
 }
