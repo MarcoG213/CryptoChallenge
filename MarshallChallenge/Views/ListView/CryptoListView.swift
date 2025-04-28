@@ -11,21 +11,61 @@ import DesignSystem
 import Core
 
 struct CryptoListView: View {
-    @State private var model = CryptoListViewModel(strategy: WazirXCryptoPriceStrategy())
+    @State var vm: CryptoListViewModel
     
     var body: some View {
-        List(model.currencies, id: \.symbol) { currency in
-            CryptoListElement(assetName: currency.baseAsset,
-                              currentValue: currency.currentPrice,
-                              change24h: currency.change24h ?? 0,
-                              marketCap: (currency.marketCap ?? 0).formattedMarketCap())
+        NavigationStack {
+            VStack {
+                ScrollView {
+                    LazyVStack(spacing: 12, pinnedViews: [.sectionHeaders]) {
+                        Section {
+                            ForEach(vm.sortedCurrencies, id: \.symbol) { currency in
+                                CryptoListElement(assetName: currency.baseAsset,
+                                                  currentValue: currency.currentPrice,
+                                                  change24h: currency.change24h ?? 0,
+                                                  marketCap: currency.marketCap.formattedMarketCap(),
+                                                  valuta: vm.service.selectedValuta
+                                )
+                                .cardStyle()
+                            }
+                        } header: {
+                            FilterBar(selectedFilter: $vm.selectedFilter)
+                                .background(Color(uiColor: .systemBackground))
+                        }
+                    }
+                    .padding(.top, 12)
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(Text("Currencies"))
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    currencyToggle
+                }
+            }
         }
-        .task {
-            await model.fetch()
+    }
+    
+    @ViewBuilder
+    private var currencyToggle: some View {
+        Menu {
+            Button {
+                Task { await vm.service.toggleCurrency() }
+            } label: {
+                Label("Switch to \(vm.service.selectedValuta == .usd ? "SEK" : "USD")", systemImage: "arrow.left.arrow.right")
+            }
+        } label: {
+            Text(vm.service.selectedValuta.rawValue)
+                .font(.subheadline)
+                .fontWeight(.semibold)
+            +
+            Text(" \(Image(systemName: "arrow.clockwise"))")
+                .font(.footnote)
+                .fontWeight(.semibold)
         }
     }
 }
 
 #Preview {
-    CryptoListView()
+    CryptoListView(vm: CryptoListViewModel(service: CurrencyService(strategy: WazirXCryptoPriceStrategy())))
 }

@@ -2,33 +2,39 @@
 //  CryptoListViewModel.swift
 //  MarshallChallenge
 //
-//  Created by MarcoG on 2025-04-25.
+//  Created by MarcoG on 2025-04-28.
 //
 
-import Foundation
+import SwiftUI
+import Core
 import Domain
-import API
 
 @Observable
 @MainActor
 class CryptoListViewModel {
-    var currencies: [CryptoCurrency] = []
-    var isLoading = false
-    var error: String?
+    @ObservationIgnored
+    let service: CurrencyService
 
-    let strategy: CurrencyStrategy
-
-    init(strategy: CurrencyStrategy) {
-        self.strategy = strategy
+    var selectedFilter: FilterOption = .valueDesc
+    
+    init(service: CurrencyService) {
+        self.service = service
     }
-
-    func fetch() async {
-        isLoading = true
-        do {
-            currencies = try await strategy.fetchCurrencies(.crypto) as? [CryptoCurrency] ?? []
-        } catch {
-            self.error = "Failed to load: \(error.localizedDescription)"
+    
+    var sortedCurrencies: [CryptoCurrency] {
+        switch selectedFilter {
+        case .valueAsc:
+            return service.currencies.sorted { $0.currentPrice < $1.currentPrice }
+        case .valueDesc:
+            return service.currencies.sorted { $0.currentPrice > $1.currentPrice }
+        case .change24hAsc:
+            return service.currencies.sorted { ($0.change24h ?? 0) < ($1.change24h ?? 0) }
+        case .change24hDesc:
+            return service.currencies.sorted { ($0.change24h ?? 0) > ($1.change24h ?? 0) }
+        case .marketCapAsc:
+            return service.currencies.sorted { $0.marketCap < $1.marketCap }
+        case .marketCapDesc:
+            return service.currencies.sorted { $0.marketCap > $1.marketCap }
         }
-        isLoading = false
     }
 }
