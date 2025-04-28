@@ -20,15 +20,15 @@ public extension Double {
 
         switch self {
         case trillion...:
-            return String(format: "$%.2fT", self / trillion)
+            return String(format: "%.2fT", self / trillion)
         case billion...:
-            return String(format: "$%.2fB", self / billion)
+            return String(format: "%.2fB", self / billion)
         case million...:
-            return String(format: "$%.2fM", self / million)
+            return String(format: "%.2fM", self / million)
         case thousand...:
-            return String(format: "$%.2fK", self / thousand)
+            return String(format: "%.2fK", self / thousand)
         default:
-            return String(format: "$%.2f", self)
+            return String(format: "%.2f", self)
         }
     }
 }
