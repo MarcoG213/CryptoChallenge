@@ -25,7 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EA3D69982DBB97CE00C6494B /* MarshallChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarshallChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA3D69982DBB97CE00C6494B /* US.SE Crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "US.SE Crypto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA3D69A82DBB97D000C6494B /* MarshallChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarshallChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA54D8882DBE12F700F623AE /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		EA54D8A72DBE152800F623AE /* API */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = API; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		EA3D69992DBB97CE00C6494B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EA3D69982DBB97CE00C6494B /* MarshallChallenge.app */,
+				EA3D69982DBB97CE00C6494B /* US.SE Crypto.app */,
 				EA3D69A82DBB97D000C6494B /* MarshallChallengeTests.xctest */,
 			);
 			name = Products;
@@ -128,7 +128,7 @@
 				EA54D8F62DBE5F5000F623AE /* DesignSystem */,
 			);
 			productName = MarshallChallenge;
-			productReference = EA3D69982DBB97CE00C6494B /* MarshallChallenge.app */;
+			productReference = EA3D69982DBB97CE00C6494B /* US.SE Crypto.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EA3D69A72DBB97D000C6494B /* MarshallChallengeTests */ = {
@@ -366,6 +366,7 @@
 				DEVELOPMENT_TEAM = TN4YD2CTJH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "US.SE Crypto";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -377,7 +378,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcog.MarshallChallenge;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "US.SE Crypto";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -399,6 +400,7 @@
 				DEVELOPMENT_TEAM = TN4YD2CTJH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "US.SE Crypto";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -410,7 +412,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcog.MarshallChallenge;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "US.SE Crypto";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
