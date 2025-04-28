@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct CryptoCurrency: Identifiable, Codable, Currency, Sendable {
+public struct CryptoCurrency: Identifiable, Codable, Currency, Sendable, Hashable {
     public var id: String { symbol }
 
     public let symbol: String
@@ -20,7 +20,7 @@ public struct CryptoCurrency: Identifiable, Codable, Currency, Sendable {
     public var lowPrice: Double
     public var volume: Double
     public let timestamp: Date
-    public let change24h: Double?
+    public let change24h: Double
     public var marketCap: Double
 
     public init(symbol: String,
@@ -33,7 +33,7 @@ public struct CryptoCurrency: Identifiable, Codable, Currency, Sendable {
                 lowPrice: Double,
                 volume: Double,
                 timestamp: Date,
-                change24h: Double?,
+                change24h: Double,
                 marketCap: Double) {
         self.symbol = symbol
         self.baseAsset = baseAsset
