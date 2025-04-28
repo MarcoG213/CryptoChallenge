@@ -53,3 +53,16 @@ public struct FilterBar: View {
             .padding(.vertical, 8)
         }
 }
+
+fileprivate extension FilterOption {
+    var title: String {
+        switch self {
+        case .valueAsc, .valueDesc:
+            return "Value"
+        case .change24hAsc, .change24hDesc:
+            return "24h Change"
+        case .marketCapAsc, .marketCapDesc:
+            return "Market Cap"
+        }
+    }
+}

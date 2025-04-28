@@ -15,17 +15,6 @@ public enum FilterOption : String, CaseIterable {
     case marketCapAsc
     case marketCapDesc
     
-    public var title: String {
-        switch self {
-        case .valueAsc, .valueDesc:
-            return "Value"
-        case .change24hAsc, .change24hDesc:
-            return "24h Change"
-        case .marketCapAsc, .marketCapDesc:
-            return "Market Cap"
-        }
-    }
-    
     public var isAscending: Bool {
         switch self {
         case .valueAsc, .change24hAsc, .marketCapAsc:
