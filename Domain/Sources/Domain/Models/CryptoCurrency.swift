@@ -13,15 +13,15 @@ public struct CryptoCurrency: Identifiable, Codable, Currency, Sendable {
     public let symbol: String
     public let baseAsset: String
     public let quoteAsset: String
-    public let price: Double
-    public let openPrice: Double
-    public let currentPrice: Double
-    public let highPrice: Double
-    public let lowPrice: Double
-    public let volume: Double
+    public var price: Double
+    public var openPrice: Double
+    public var currentPrice: Double
+    public var highPrice: Double
+    public var lowPrice: Double
+    public var volume: Double
     public let timestamp: Date
     public let change24h: Double?
-    public let marketCap: Double?
+    public var marketCap: Double
 
     public init(symbol: String,
                 baseAsset: String,
@@ -34,7 +34,7 @@ public struct CryptoCurrency: Identifiable, Codable, Currency, Sendable {
                 volume: Double,
                 timestamp: Date,
                 change24h: Double?,
-                marketCap: Double?) {
+                marketCap: Double) {
         self.symbol = symbol
         self.baseAsset = baseAsset
         self.quoteAsset = quoteAsset
