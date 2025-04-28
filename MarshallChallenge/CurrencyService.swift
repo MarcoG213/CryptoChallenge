@@ -22,6 +22,9 @@ class CurrencyService {
 
     var selectedValuta: AppValuta = .usd
     var currentExRate: Double = 1.0
+    
+    private var exchangeRateTask: Task<Void, Never>? = nil
+    var isFetchingRate = false
 
     init(strategy: CurrencyStrategy = WazirXCryptoPriceStrategy()) {
         self.strategy = strategy
@@ -45,6 +48,29 @@ class CurrencyService {
         await fetch()
     }
     
+    public func startUpdatingExchangeRate() {
+        isFetchingRate = true
+        exchangeRateTask?.cancel()
+
+        exchangeRateTask = Task {
+            while !Task.isCancelled {
+                do {
+                    let rate = try await exchangeStrategy.fetchExchangeRate(base: "USD", target: "SEK")
+                    currentExRate = rate
+                    isFetchingRate = false
+                } catch {
+                    print("Failed to fetch exchange rate:", error)
+                }
+                try? await Task.sleep(nanoseconds: 5_000_000_000)
+            }
+        }
+    }
+
+    public func stopUpdatingExchangeRate() {
+        exchangeRateTask?.cancel()
+        exchangeRateTask = nil
+    }
+    
     private func loadExchangeRateIfNeeded() async {
         if selectedValuta == .sek {
             do {
@@ -52,10 +78,7 @@ class CurrencyService {
                 currentExRate = rate
             } catch {
                 print("Error fetching SEK rate: \(error)")
-                currentExRate = 1.0
             }
-        } else {
-            currentExRate = 1.0
         }
     }
     
