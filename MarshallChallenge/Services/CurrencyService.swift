@@ -49,7 +49,6 @@ class CurrencyService {
     }
     
     public func startUpdatingExchangeRate() {
-        isFetchingRate = true
         exchangeRateTask?.cancel()
 
         exchangeRateTask = Task {
@@ -79,11 +78,18 @@ class CurrencyService {
             } catch {
                 print("Error fetching SEK rate: \(error)")
             }
+        } else {
+            isFetchingRate = true
+            currentExRate = 1.0
         }
     }
     
     private func applyExchangeRate(to currencies: [CryptoCurrency]) -> [CryptoCurrency] {
-        currencies.map { currency in
+        guard currentExRate != 1 else {
+            return currencies
+        }
+        
+        return currencies.map { currency in
             var adjusted = currency
             adjusted.price *= currentExRate
             adjusted.currentPrice *= currentExRate
