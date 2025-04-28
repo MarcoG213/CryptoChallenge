@@ -29,13 +29,13 @@ struct CryptoListView: View {
                                                       marketCap: currency.marketCap.formattedMarketCap(),
                                                       valuta: vm.service.selectedValuta
                                     )
-                                    .cardStyle()
+                                    .cardStyle(backgroundColor: Color.mainBG)
                                 }
                                 .buttonStyle(.plain)
                             }
                         } header: {
                             FilterBar(selectedFilter: $vm.selectedFilter)
-                                .background(Color(uiColor: .systemBackground))
+                                .background(.clear)
                         }
                     }
                     .padding(.top, 12)

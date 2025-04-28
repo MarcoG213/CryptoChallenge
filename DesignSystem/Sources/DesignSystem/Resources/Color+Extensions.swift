@@ -15,4 +15,8 @@ public extension Color {
     static var negative: Color {
         Color("negative_red", bundle: .module)
     }
+    
+    static var mainBG: Color {
+        Color("mainBG", bundle: .module)
+    }
 }
