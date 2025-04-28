@@ -20,13 +20,18 @@ struct CryptoListView: View {
                     LazyVStack(spacing: 12, pinnedViews: [.sectionHeaders]) {
                         Section {
                             ForEach(vm.sortedCurrencies, id: \.symbol) { currency in
-                                CryptoListElement(assetName: currency.baseAsset,
-                                                  currentValue: currency.currentPrice,
-                                                  change24h: currency.change24h ?? 0,
-                                                  marketCap: currency.marketCap.formattedMarketCap(),
-                                                  valuta: vm.service.selectedValuta
-                                )
-                                .cardStyle()
+                                Button {
+                                    vm.selectedCurrency = currency
+                                } label: {
+                                    CryptoListElement(assetName: currency.baseAsset,
+                                                      currentValue: currency.currentPrice,
+                                                      change24h: currency.change24h,
+                                                      marketCap: currency.marketCap.formattedMarketCap(),
+                                                      valuta: vm.service.selectedValuta
+                                    )
+                                    .cardStyle()
+                                }
+                                .buttonStyle(.plain)
                             }
                         } header: {
                             FilterBar(selectedFilter: $vm.selectedFilter)
@@ -42,6 +47,9 @@ struct CryptoListView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     currencyToggle
                 }
+            }
+            .navigationDestination(item: $vm.selectedCurrency) { currency in
+                CoinDetail(currency: currency, valuta: vm.service.selectedValuta)
             }
         }
     }

@@ -16,6 +16,7 @@ class CryptoListViewModel {
     let service: CurrencyService
 
     var selectedFilter: FilterOption = .valueDesc
+    var selectedCurrency: CryptoCurrency? = nil
     
     init(service: CurrencyService) {
         self.service = service
@@ -28,9 +29,9 @@ class CryptoListViewModel {
         case .valueDesc:
             return service.currencies.sorted { $0.currentPrice > $1.currentPrice }
         case .change24hAsc:
-            return service.currencies.sorted { ($0.change24h ?? 0) < ($1.change24h ?? 0) }
+            return service.currencies.sorted { $0.change24h < $1.change24h }
         case .change24hDesc:
-            return service.currencies.sorted { ($0.change24h ?? 0) > ($1.change24h ?? 0) }
+            return service.currencies.sorted { $0.change24h > $1.change24h }
         case .marketCapAsc:
             return service.currencies.sorted { $0.marketCap < $1.marketCap }
         case .marketCapDesc:
